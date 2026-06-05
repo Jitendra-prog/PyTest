@@ -12,21 +12,20 @@ class test_admin_page:
     invalid_email = "wrong@your.com"
 
     def page_title(self):
-         self.driver = webdriver.Chrome()
-         self.driver.get(self.admin_page_url)
-         act_title = self.driver.title
-         expected_title = "NoPCommerce"
-         if act_title == expected_title:
-             assert True
-             self.driver.close()
-         else:
-             self.driver.close()
-
+        self.driver = webdriver.Chrome()
+        self.driver.get(self.admin_page_url)
+        act_title = self.driver.title
+        expected_title = "NoPCommerce"
+        if act_title == expected_title:
+            assert True
+            self.driver.close()
+        else:
+            self.driver.close()
 
     def validate_log(self):
         self.driver = webdriver.Chrome()
         self.driver.get(self.admin_page_url)
-        self.login_obj = loginAdmin()
+        self.login_obj = login_admin_page()
         self.login_obj.enterUserName()
         self.login_obj.enterPassword()
         self.login_obj.login()
